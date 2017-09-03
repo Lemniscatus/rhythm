@@ -1,7 +1,7 @@
 Type=Exe
 Form=rhythm.frm
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Module=Module1; C:\Users\Lemniscatus\Downloads\NanoVB6_-_2199503102011\NanoVB6\main.bas
+Module=Module1; main.bas
 IconForm="Form1"
 Startup="Sub Main"
 HelpFile=""
