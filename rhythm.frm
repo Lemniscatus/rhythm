@@ -294,14 +294,6 @@ Option Explicit
 Const whole = 3840
 Dim ErrorCode As Integer
 
-Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal hWndInsertAfter As Long, ByVal X As Long, Y, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-
-Private Const HWND_TOPMOST = -1
-Private Const HWND_NOTOPMOST = -2
-Private Const SWP_NOMOVE = &H2
-Private Const SWP_NOSIZE = &H1
-Private Const TOPMOST_FLAGS = SWP_NOMOVE Or SWP_NOSIZE
-
 Sub ShowFile(ByVal Y As Boolean)
     frameFile.Enabled = Y
     frameFile.Visible = Y
@@ -584,19 +576,28 @@ saveError:
     
 End Sub
 
-Private Sub Command1_Click()
+Sub Inform()
     Dim info As String
-    info = ""
-    info = info + "Rhythm is generated using naive interference as demonstrated by "
+    info = "Ready..." + vbCrLf + vbCrLf
+    info = info + "Rhythm is generated using naive interference algorithm as demonstrated by "
     info = info + "Joseph Schillinger et al. It makes use of a simple mathematical algorithm "
     info = info + "to generate 'slices' of values which could be treated as musical "
     info = info + "rhythms." + vbCrLf + vbCrLf
+    info = info + "Seeds are divisors that slice time to create a sequence of discreet values that we treat as rhythms" + vbCrLf
+    info = info + "Resolution indicates 1 measure; the reciprocal of which is the lowest 'resolution' in the sequence" + vbCrLf
+    info = info + "Measure is the total number of cummulative whole notes to generate" + vbCrLf
+    info = info + "Offset is the beginning of our sequence of rhythmic values" + vbCrLf + vbCrLf
     info = info + "Example: A resolution of 8 means the value of 1 is 1/8 note, the value of 2 is 1/4 note "
     info = info + "and the value of 4 is 1/2 note. etc. Thus, the value of 8 is a whole note." + vbCrLf + vbCrLf
     info = info + "_____" + vbCrLf + vbCrLf
     info = info + "Ref.: A Guide to Schillinger’s Theory of Rhythm, Second Edition by Frans Absil, 2015"
     ShowFile False
     txtRhythm.Text = info
+
+End Sub
+
+Private Sub Command1_Click()
+    Inform
 End Sub
 
 Private Sub Dir1_Change()
@@ -624,12 +625,13 @@ Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub Form_Load()
+    Inform
     Rem SetWindowPos hwnd, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS
 End Sub
 
 Sub Clear()
     ShowFile False
-    txtRhythm.Text = "Ready..."
+    txtRhythm.Text = "Input..."
 End Sub
 
 Private Sub txtCount_Change()
