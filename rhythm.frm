@@ -3,20 +3,38 @@ Begin VB.Form Form1
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Rhythm Generator by Lemniscatus"
-   ClientHeight    =   7155
+   ClientHeight    =   6870
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   7440
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    Icon            =   "rhythm.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7155
+   ScaleHeight     =   6870
    ScaleWidth      =   7440
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton Command1 
       Caption         =   "?"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   2850
       TabIndex        =   23
@@ -25,16 +43,35 @@ Begin VB.Form Form1
    End
    Begin VB.CommandButton cmdFile 
       Caption         =   "&Data Files"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
-      Left            =   6120
+      Left            =   6360
       TabIndex        =   16
-      Top             =   6120
+      Top             =   6360
       Width           =   975
    End
    Begin VB.TextBox txtOffset 
       Alignment       =   1  'Right Justify
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   960
+      MaxLength       =   10
       TabIndex        =   7
       ToolTipText     =   "Number of whole notes to generate...  "
       Top             =   1200
@@ -59,8 +96,18 @@ Begin VB.Form Form1
    End
    Begin VB.TextBox txtCount 
       Alignment       =   1  'Right Justify
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   960
+      MaxLength       =   10
       TabIndex        =   5
       ToolTipText     =   "Number of whole notes to generate...  "
       Top             =   840
@@ -68,8 +115,18 @@ Begin VB.Form Form1
    End
    Begin VB.TextBox txtResolution 
       Alignment       =   1  'Right Justify
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   960
+      MaxLength       =   10
       TabIndex        =   3
       ToolTipText     =   "Resolution where 1 is whole note, 2 is half note, 4 is quarter note, etc.  "
       Top             =   480
@@ -77,8 +134,18 @@ Begin VB.Form Form1
    End
    Begin VB.TextBox txtSeeds 
       BackColor       =   &H00C0E0FF&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   960
+      MaxLength       =   100
       TabIndex        =   1
       ToolTipText     =   "Rhythmic seeds of the form s1.s2.s3... where s is a positive integer  "
       Top             =   120
@@ -87,31 +154,67 @@ Begin VB.Form Form1
    Begin VB.Frame frameFile 
       Caption         =   "File"
       Enabled         =   0   'False
-      Height          =   4695
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   4215
       Left            =   480
       TabIndex        =   20
-      Top             =   1800
+      Top             =   1740
       Visible         =   0   'False
       Width           =   6495
       Begin VB.CommandButton cmdSave 
          Caption         =   "S&ave"
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   375
          Left            =   5640
          TabIndex        =   15
-         Top             =   3840
+         Top             =   3360
          Width           =   615
       End
       Begin VB.CommandButton cmdLoad 
          Caption         =   "&Load"
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   375
          Left            =   4920
          TabIndex        =   14
-         Top             =   3840
+         Top             =   3360
          Width           =   615
       End
       Begin VB.DriveListBox Drive1 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   315
          Left            =   240
          TabIndex        =   9
@@ -119,59 +222,96 @@ Begin VB.Form Form1
          Width           =   3015
       End
       Begin VB.DirListBox Dir1 
-         Height          =   3015
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   2565
          Left            =   240
          TabIndex        =   10
          Top             =   720
          Width           =   3015
       End
       Begin VB.FileListBox File1 
-         Height          =   3405
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   3015
          Left            =   3480
          TabIndex        =   11
          Top             =   240
          Width           =   2775
       End
       Begin VB.TextBox txtFile 
-         Height          =   285
-         Left            =   1080
-         TabIndex        =   13
-         Top             =   3885
-         Width           =   3735
-      End
-      Begin VB.Label lblStatus 
-         AutoSize        =   -1  'True
-         Caption         =   "Error: Invalid Parameters!"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         Height          =   285
+         Left            =   1200
+         MaxLength       =   30
+         TabIndex        =   13
+         Top             =   3405
+         Width           =   3615
+      End
+      Begin VB.Label lblStatus 
+         AutoSize        =   -1  'True
+         Caption         =   "Error: Invalid Parameters!"
          ForeColor       =   &H000000FF&
          Height          =   240
-         Left            =   240
+         Left            =   360
          TabIndex        =   22
-         Top             =   4320
+         Top             =   3840
          Visible         =   0   'False
          Width           =   2655
       End
       Begin VB.Label Label8 
          AutoSize        =   -1  'True
          Caption         =   "File Name"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
-         Left            =   240
+         Left            =   360
          TabIndex        =   12
-         Top             =   3930
+         Top             =   3450
          Width           =   705
       End
    End
    Begin VB.TextBox txtRhythm 
       Enabled         =   0   'False
-      Height          =   5175
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   4575
       Left            =   120
       MultiLine       =   -1  'True
       TabIndex        =   21
@@ -179,10 +319,30 @@ Begin VB.Form Form1
       Top             =   1560
       Width           =   7215
    End
+   Begin VB.Label lblFile 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Ready . . ."
+      ForeColor       =   &H00008000&
+      Height          =   240
+      Left            =   120
+      TabIndex        =   24
+      Top             =   6240
+      Width           =   1065
+   End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "&Offset"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   120
       TabIndex        =   6
@@ -193,6 +353,15 @@ Begin VB.Form Form1
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Version 1.01 [One - Alpha] by Lemniscatus"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H0000FFFF&
       Height          =   195
       Left            =   3787
@@ -234,16 +403,34 @@ Begin VB.Form Form1
       BackStyle       =   0  'Transparent
       Caption         =   "Philippine Copyright ©2017 by Noel C. Posicion.  All Rights Reserved"
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   120
       TabIndex        =   17
-      Top             =   6840
+      Top             =   6600
       Width           =   4875
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "&Measure"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   120
       TabIndex        =   4
@@ -254,6 +441,15 @@ Begin VB.Form Form1
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "&Resolution"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   195
       Left            =   120
       TabIndex        =   2
@@ -488,6 +684,8 @@ Private Sub cmdLoad_Click()
         
     End If
     
+    lblFile.Caption = "Data File: " + txtFile.Text
+    
     Exit Sub
         
 LoadError:
@@ -567,6 +765,8 @@ Private Sub cmdSave_Click()
     
     ShowFile False
     
+    lblFile.Caption = "Data File: " + txtFile.Text
+    
     Exit Sub
     
 saveError:
@@ -630,11 +830,17 @@ End Sub
 
 Sub Clear()
     ShowFile False
-    txtRhythm.Text = "Editing . . ."
+    Rem txtRhythm.Text = "Editing . . ."
+    lblFile.Caption = "New data . . ."
 End Sub
 
 Private Sub txtCount_Change()
     Clear
+End Sub
+
+Private Sub txtCount_GotFocus()
+    txtCount.SelStart = 0
+    txtCount.SelLength = 999
 End Sub
 
 Private Sub txtFile_Change()
@@ -643,14 +849,34 @@ Private Sub txtFile_Change()
     lblStatus.Visible = False
 End Sub
 
+Private Sub txtFile_GotFocus()
+    txtFile.SelStart = 0
+    txtFile.SelLength = 999
+End Sub
+
 Private Sub txtOffset_Change()
     Clear
+End Sub
+
+Private Sub txtOffset_GotFocus()
+    txtOffset.SelStart = 0
+    txtOffset.SelLength = 999
 End Sub
 
 Private Sub txtResolution_Change()
     Clear
 End Sub
 
+Private Sub txtResolution_GotFocus()
+    txtResolution.SelStart = 0
+    txtResolution.SelLength = 999
+End Sub
+
 Private Sub txtSeeds_Change()
     Clear
+End Sub
+
+Private Sub txtSeeds_GotFocus()
+    txtSeeds.SelStart = 0
+    txtSeeds.SelLength = 999
 End Sub
