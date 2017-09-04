@@ -24,10 +24,10 @@ Begin VB.Form Form1
       Width           =   285
    End
    Begin VB.CommandButton cmdFile 
-      Caption         =   "Data Files"
+      Caption         =   "&Data Files"
       Height          =   375
       Left            =   6120
-      TabIndex        =   12
+      TabIndex        =   16
       Top             =   6120
       Width           =   975
    End
@@ -35,13 +35,13 @@ Begin VB.Form Form1
       Alignment       =   1  'Right Justify
       Height          =   285
       Left            =   960
-      TabIndex        =   4
+      TabIndex        =   7
       ToolTipText     =   "Number of whole notes to generate...  "
       Top             =   1200
       Width           =   495
    End
    Begin VB.CommandButton cmdGenerate 
-      Caption         =   "Generate Rhythm"
+      Caption         =   "&Generate Rhythm"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -53,7 +53,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   975
       Left            =   1560
-      TabIndex        =   5
+      TabIndex        =   8
       Top             =   480
       Width           =   1575
    End
@@ -61,7 +61,7 @@ Begin VB.Form Form1
       Alignment       =   1  'Right Justify
       Height          =   285
       Left            =   960
-      TabIndex        =   3
+      TabIndex        =   5
       ToolTipText     =   "Number of whole notes to generate...  "
       Top             =   840
       Width           =   495
@@ -70,7 +70,7 @@ Begin VB.Form Form1
       Alignment       =   1  'Right Justify
       Height          =   285
       Left            =   960
-      TabIndex        =   2
+      TabIndex        =   3
       ToolTipText     =   "Resolution where 1 is whole note, 2 is half note, 4 is quarter note, etc.  "
       Top             =   480
       Width           =   495
@@ -89,53 +89,53 @@ Begin VB.Form Form1
       Enabled         =   0   'False
       Height          =   4695
       Left            =   480
-      TabIndex        =   19
+      TabIndex        =   20
       Top             =   1800
       Visible         =   0   'False
       Width           =   6495
       Begin VB.CommandButton cmdSave 
-         Caption         =   "Save"
+         Caption         =   "S&ave"
          Enabled         =   0   'False
          Height          =   375
          Left            =   5640
-         TabIndex        =   11
+         TabIndex        =   15
          Top             =   3840
          Width           =   615
       End
       Begin VB.CommandButton cmdLoad 
-         Caption         =   "Load"
+         Caption         =   "&Load"
          Enabled         =   0   'False
          Height          =   375
          Left            =   4920
-         TabIndex        =   10
+         TabIndex        =   14
          Top             =   3840
          Width           =   615
       End
       Begin VB.DriveListBox Drive1 
          Height          =   315
          Left            =   240
-         TabIndex        =   6
+         TabIndex        =   9
          Top             =   240
          Width           =   3015
       End
       Begin VB.DirListBox Dir1 
          Height          =   3015
          Left            =   240
-         TabIndex        =   7
+         TabIndex        =   10
          Top             =   720
          Width           =   3015
       End
       Begin VB.FileListBox File1 
          Height          =   3405
          Left            =   3480
-         TabIndex        =   8
+         TabIndex        =   11
          Top             =   240
          Width           =   2775
       End
       Begin VB.TextBox txtFile 
          Height          =   285
          Left            =   1080
-         TabIndex        =   9
+         TabIndex        =   13
          Top             =   3885
          Width           =   3735
       End
@@ -164,7 +164,7 @@ Begin VB.Form Form1
          Caption         =   "File Name"
          Height          =   195
          Left            =   240
-         TabIndex        =   20
+         TabIndex        =   12
          Top             =   3930
          Width           =   705
       End
@@ -182,10 +182,10 @@ Begin VB.Form Form1
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Offset"
+      Caption         =   "&Offset"
       Height          =   195
       Left            =   120
-      TabIndex        =   18
+      TabIndex        =   6
       Top             =   1245
       Width           =   420
    End
@@ -196,7 +196,7 @@ Begin VB.Form Form1
       ForeColor       =   &H0000FFFF&
       Height          =   195
       Left            =   3787
-      TabIndex        =   17
+      TabIndex        =   19
       Top             =   840
       Width           =   3000
    End
@@ -216,7 +216,7 @@ Begin VB.Form Form1
       ForeColor       =   &H00FFFFFF&
       Height          =   480
       Left            =   3532
-      TabIndex        =   16
+      TabIndex        =   18
       Top             =   360
       Width           =   3510
    End
@@ -236,34 +236,34 @@ Begin VB.Form Form1
       Enabled         =   0   'False
       Height          =   195
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   17
       Top             =   6840
       Width           =   4875
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Measure"
+      Caption         =   "&Measure"
       Height          =   195
       Left            =   120
-      TabIndex        =   14
+      TabIndex        =   4
       Top             =   885
       Width           =   615
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Resolution"
+      Caption         =   "&Resolution"
       Height          =   195
       Left            =   120
-      TabIndex        =   13
+      TabIndex        =   2
       Top             =   525
       Width           =   750
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Seeds"
+      Caption         =   "&Seeds"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -578,7 +578,6 @@ End Sub
 
 Sub Inform()
     Dim info As String
-    info = "Ready..." + vbCrLf + vbCrLf
     info = info + "Rhythm is generated using naive interference algorithm as demonstrated by "
     info = info + "Joseph Schillinger et al. It makes use of a simple mathematical algorithm "
     info = info + "to generate 'slices' of values which could be treated as musical "
@@ -631,7 +630,7 @@ End Sub
 
 Sub Clear()
     ShowFile False
-    txtRhythm.Text = "Input..."
+    txtRhythm.Text = "Editing . . ."
 End Sub
 
 Private Sub txtCount_Change()
